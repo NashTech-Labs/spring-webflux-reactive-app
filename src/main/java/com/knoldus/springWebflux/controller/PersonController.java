@@ -1,11 +1,11 @@
-package pl.piomin.services.controller;
+package com.knoldus.springWebflux.controller;
 
+import com.knoldus.springWebflux.model.Person;
 import java.time.Duration;
 import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.piomin.services.model.Person;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
@@ -47,6 +47,11 @@ public class PersonController {
                 .doOnNext(person -> LOGGER.info("Server produces: {}", person));
     }
 
+    /**
+     * Inserting the Person's details in object.
+     *
+     * @return true if all Person's details are true,else false
+     */
     private Stream<Person> prepareStream() {
         return Stream.of(
             new Person(1, "Name01", "Surname01", 11),
