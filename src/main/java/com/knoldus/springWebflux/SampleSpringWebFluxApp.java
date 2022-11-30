@@ -29,7 +29,6 @@ public class SampleSpringWebFluxApp {
         executor.initialize();
         return executor;
     }
-
     @Value("${target.uri}")
     private String targetUri;
 
